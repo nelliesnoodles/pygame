@@ -5,7 +5,7 @@ import pygame as pg
 
 (width, height) = (800, 800)
 background_color = (110, 100, 110)
-LBLUE = (100, 100, 255, 0)
+
 
 
 
@@ -16,14 +16,7 @@ screen.fill(background_color)
 animation_timer = pg.time.Clock()
 pg.display.flip()
 
-class ShadowBubble(object):
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
 
-    def make_shadow(self):
-        shadow = pg.Surface(self.x, self.y)
-        return shadow
 
 class Bubble(object):
 
@@ -134,10 +127,7 @@ def new_bubble(x_pos, y_pos, radius):
         z += 50
     else:
         y += 20
-
-
-
-
+        
     newx = x_pos + change_x
     newy = y_pos + change_y
     R = base_clr + x
