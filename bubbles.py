@@ -54,13 +54,16 @@ class Bubble(object):
     def move_bubble(self):
         dark = (self.R - 5, self.G - 5, self.B - 5)
         light = (self.R + 5, self.G + 5, self.B + 5)
-        shine = (self.R + 5, self.G + 5, self.B + 10)
+        pre_shine = (self.R + 6, self.G + 6, self.B + 8)
+        shine = (self.R + 8, self.G + 8, self.B + 10)
+        
         color = (self.R, self.G, self.B)
 
         pg.draw.circle(screen, (dark), (self.pos_x + 10, self.pos_y + 10), self.radius, self.thickness)
         pg.draw.circle(screen, (color), (self.pos_x, self.pos_y), self.radius, self.thickness)
         pg.draw.circle(screen, (light), (self.pos_x, self.pos_y -2), self.radius - 5, self.thickness)
-        pg.draw.circle(screen, (shine), (self.pos_x - 5, self.pos_y -1), self.radius//2, self.thickness)
+        pg.draw.circle(screen, (pre_shine), (self.pos_x, self.pos_y), self.radius//2, self.thickness)
+        pg.draw.circle(screen, (shine), (self.pos_x - 5, self.pos_y -1), self.radius//5, self.thickness)
 
         self.pos_x += self.speed_x
         self.pos_y += self.speed_y
